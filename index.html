@@ -10,18 +10,30 @@
     <div class="board">
       <h3>A fazer</h3>
 
-      <ul id="backlog">
-        <li>
-          <p>Tarefa1</p>
-          <p class="remove">x</p>
+      <ul id="backlog" ondrop="drop(event, this.id)" ondragover="over(event)">
+        <li
+          id="${new Date().getTime()}"
+          draggable="true"
+          ondragstart="drag(event)"
+        >
+          <p>organizar emails</p>
+          <p class="remove" onClick="removeCard(this)">x</p>
         </li>
-        <li>
-          <p>Tarefa2</p>
-          <p class="remove" onclick="removeCard(this)">x</p>
+        <li
+          id="${new Date().getTime()}"
+          draggable="true"
+          ondragstart="drag(event)"
+        >
+          <p>Correr</p>
+          <p class="remove" onClick="removeCard(this)">x</p>
         </li>
-        <li>
-          <p>Tarefa3</p>
-          <p class="remove">x</p>
+        <li
+          id="${new Date().getTime()}"
+          draggable="true"
+          ondragstart="drag(event)"
+        >
+          <p>Terminar serie</p>
+          <p class="remove" onClick="removeCard(this)">x</p>
         </li>
       </ul>
 
@@ -33,7 +45,11 @@
     <div class="board">
       <h3>Em produção</h3>
 
-      <ul id="doing"></ul>
+      <ul
+        id="doing"
+        ondrop="drop(event, this.id)"
+        ondragover="over(event)"
+      ></ul>
 
       <div class="add-card" onclick="addCard(this)">
         <p>Adicionar tarefa</p>
@@ -43,7 +59,7 @@
     <div class="board">
       <h3>Concluido</h3>
 
-      <ul id="done"></ul>
+      <ul id="done" ondrop="drop(event, this.id)" ondragover="over(event)"></ul>
 
       <div class="add-card" onclick="addCard(this)">
         <p>Adicionar tarefa</p>
